@@ -1,0 +1,6 @@
+server:
+  tomcat:
+    uri-encoding: utf-8
+  port: 4096
+cxf:
+  path: /ws
