@@ -35,6 +35,10 @@ import java.util.List;
 @XmlRootElement(name = "personnelInfoList")
 public class PersonnelInfoList {
 
+    public void setPersonnelInfo(List<PersonnelInfoType> personnelInfo) {
+        this.personnelInfo = personnelInfo;
+    }
+
     protected List<PersonnelInfoType> personnelInfo;
 
     /**

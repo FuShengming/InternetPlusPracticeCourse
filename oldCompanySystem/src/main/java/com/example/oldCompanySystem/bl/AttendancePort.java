@@ -37,7 +37,7 @@ public interface AttendancePort {
     @WebResult(name = "GroupScheduleInformationList", targetNamespace = "http://www.oldCompany.com/attendance", partName = "groupScheduleInfoList")
     @Action(input = "attendance/getAllGroupSchedulesRequest", output = "attendance/getAllGroupSchedulesResponse")
     public GroupScheduleInformationList getAllGroupSchedules(
-            @WebParam(name = "getAllGroupScheduleParam", targetNamespace = "http://www.oldCompany.com/attendance", partName = "getAllGroupSchedulesParam")
+            @WebParam(name = "getAllGroupSchedulesParam", targetNamespace = "http://www.oldCompany.com/attendance", partName = "getAllGroupSchedulesParam")
                     String getAllGroupSchedulesParam);
 
     /**
@@ -53,7 +53,7 @@ public interface AttendancePort {
         @FaultAction(className = GroupDoesNotExistFault.class, value = "attendance/GroupDoesNotExistFault")
     })
     public GroupScheduleInformationType getGroupScheduleById(
-            @WebParam(name = "getGroupScheduleParam", targetNamespace = "http://www.oldCompany.com/attendance", partName = "getGroupScheduleByIdParam")
+            @WebParam(name = "getGroupScheduleByIdParam", targetNamespace = "http://www.oldCompany.com/attendance", partName = "getGroupScheduleByIdParam")
                     GetGroupScheduleInformationParamType getGroupScheduleByIdParam)
         throws GroupDoesNotExistFault
     ;

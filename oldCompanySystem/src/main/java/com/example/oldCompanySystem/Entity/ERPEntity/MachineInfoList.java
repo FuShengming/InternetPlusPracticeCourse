@@ -32,6 +32,10 @@ import java.util.List;
 @XmlRootElement(name = "MachineInfoList")
 public class MachineInfoList {
 
+    public void setMachineInfo(List<MachineInfoType> machineInfo) {
+        this.machineInfo = machineInfo;
+    }
+
     @XmlElement(name = "MachineInfo")
     protected List<MachineInfoType> machineInfo;
 

@@ -32,6 +32,10 @@ import java.util.List;
 @XmlRootElement(name = "GroupScheduleInformationList", namespace = "http://www.oldCompany.com/attendance")
 public class GroupScheduleInformationList {
 
+    public void setGroupScheduleInformation(List<GroupScheduleInformationType> groupScheduleInformation) {
+        this.groupScheduleInformation = groupScheduleInformation;
+    }
+
     @XmlElement(name = "GroupScheduleInformation", namespace = "http://www.oldCompany.com/attendance")
     protected List<GroupScheduleInformationType> groupScheduleInformation;
 

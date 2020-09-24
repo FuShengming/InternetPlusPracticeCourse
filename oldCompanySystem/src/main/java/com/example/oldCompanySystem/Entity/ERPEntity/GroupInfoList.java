@@ -32,6 +32,10 @@ import java.util.List;
 @XmlRootElement(name = "GroupInfoList")
 public class GroupInfoList {
 
+    public void setGroupInfo(List<GroupInformationType> groupInfo) {
+        this.groupInfo = groupInfo;
+    }
+
     @XmlElement(name = "GroupInfo")
     protected List<GroupInformationType> groupInfo;
 
