@@ -12,7 +12,10 @@ import javax.jws.soap.SOAPBinding;
 import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -24,8 +27,8 @@ public class OrderPortImpl implements OrderPort {
         System.setProperty(StaxUtils.ALLOW_INSECURE_PARSER, "true");
     }
 
-    ArrayList<String> fileLines = new CsvReader("csv\\订单信息.csv").readCsv();
-
+    public static ArrayList<String> fileLines = new CsvReader("csv\\订单信息.csv").readCsv();
+    public  static ArrayList<String> itemLines = new CsvReader("csv\\物品信息.csv").readCsv();
     @Override
     public OrderList getAllOrders(String getAllOrdersParam) {
         OrderList res = new OrderList();
@@ -33,22 +36,14 @@ public class OrderPortImpl implements OrderPort {
         res.setOrderInfo(orderInfoTypes);
         int cnt = 0;
        for(String line:fileLines){
-           if(cnt==0){
+           if(cnt == 0){
                cnt++;
                continue;
            }
-           String[] properties = line.split(",");
-           for(String s:properties){
-               System.out.println(s);
-           }
-           OrderInfoType orderInfoType = new OrderInfoType();
-           orderInfoType.setOrderId(properties[0]);
-           orderInfoType.setItem(properties[1]);
-           orderInfoType.setNumOfOrder(Integer.parseInt(properties[2]));
+           String[] properties = line.split(",",-1);
 
-           //orderInfoType.setTermOfDelivery();
-           orderInfoType.setComment(properties[4]);
-           orderInfoType.setLength(properties[5]);
+           OrderInfoType orderInfoType = new OrderInfoType();
+           setOrderInfo(orderInfoType,properties);
            orderInfoTypes.add(orderInfoType);
        }
         return res;
@@ -56,11 +51,92 @@ public class OrderPortImpl implements OrderPort {
 
     @Override
     public OrderInfoType getOrderById(GetOrderByIdType getOrderByIdParam) throws OrderDoesNotExistFault {
-        return null;
+        OrderInfoType res = new OrderInfoType();
+        String id = getOrderByIdParam.getOrderId();
+        int cnt = 0;
+        boolean existed = false;
+        for(String line:fileLines){
+            if(cnt==0){
+                cnt++;
+                continue;
+            }
+            String[] properties = line.split(",",-1);
+            if(properties[0].equals(id)){
+                existed = true;
+                setOrderInfo(res,properties);
+            }
+        }
+        if(!existed){
+            throw new OrderDoesNotExistFault("This order does not exist.",new OrderDoesNotExistFaultType());
+        }else {
+            return res;
+        }
+
     }
 
     @Override
     public OrderList getOrdersByItemId(GetOrdersByItemIdType getOrdersByMaterielIdParam) throws ItemDoesNotExistFault {
-        return null;
+
+        String id = getOrdersByMaterielIdParam.getItemId();
+        boolean existed = false;
+        for(String line:itemLines){
+            String[] properties = line.split(",",-1);
+            if(properties[0].equals(id)){
+                existed = true;
+                break;
+            }
+        }
+        if(!existed){
+            throw new ItemDoesNotExistFault("This item does not exist.",new ItemDoesNotExistFaultType());
+        }
+
+        OrderList res = new OrderList();
+        List<OrderInfoType> orderInfoTypes = new ArrayList<OrderInfoType>();
+        res.setOrderInfo(orderInfoTypes);
+        int cnt = 0;
+        for(String line:fileLines){
+            if(cnt==0){
+                cnt++;
+                continue;
+            }
+            String[] properties = line.split(",",-1);
+            if(properties[1].equals(id)){
+                OrderInfoType orderInfoType = new OrderInfoType();
+                setOrderInfo(orderInfoType,properties);
+                orderInfoTypes.add(orderInfoType);
+            }
+        }
+        return res;
+
+    }
+
+    private void setOrderInfo(OrderInfoType orderInfoType,String[] properties){
+        orderInfoType.setOrderId(properties[0]);
+        orderInfoType.setItem(properties[1]);
+        orderInfoType.setNumOfOrder(Integer.parseInt(properties[2]));
+
+        String dateString = properties[3];
+        Date date = null;
+        try{
+            date= new SimpleDateFormat("yyyy/MM/dd").parse(dateString);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return;
+        }
+        GregorianCalendar cal = new GregorianCalendar();
+        cal.setTime(date);
+        XMLGregorianCalendar gc = null;
+        try {
+            gc = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
+            gc.setTimezone(DatatypeConstants.FIELD_UNDEFINED);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+        orderInfoType.setTermOfDelivery(gc);
+        orderInfoType.setComment(properties[4]);
+        orderInfoType.setLength(properties[5]);
     }
 }

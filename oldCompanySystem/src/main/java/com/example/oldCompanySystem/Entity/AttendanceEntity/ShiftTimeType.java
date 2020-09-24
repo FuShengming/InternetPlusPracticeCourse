@@ -15,8 +15,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="startTime" type="{http://www.w3.org/2001/XMLSchema}date"/>
- *         &lt;element name="endTime" type="{http://www.w3.org/2001/XMLSchema}date"/>
+ *         &lt;element name="startTime" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="endTime" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,21 +33,21 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class ShiftTimeType {
 
     @XmlElement(required = true)
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar startTime;
+    @XmlSchemaType(name = "string")
+    protected String startTime;
     @XmlElement(required = true)
-    @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar endTime;
+    @XmlSchemaType(name = "string")
+    protected String endTime;
 
     /**
      * 获取startTime属性的值。
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
@@ -56,10 +56,10 @@ public class ShiftTimeType {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setStartTime(XMLGregorianCalendar value) {
+    public void setStartTime(String value) {
         this.startTime = value;
     }
 
@@ -68,10 +68,10 @@ public class ShiftTimeType {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
@@ -80,10 +80,10 @@ public class ShiftTimeType {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setEndTime(XMLGregorianCalendar value) {
+    public void setEndTime(String value) {
         this.endTime = value;
     }
 

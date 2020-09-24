@@ -32,6 +32,10 @@ import java.util.List;
 @XmlRootElement(name = "shiftList", namespace = "http://www.oldCompany.com/attendance")
 public class ShiftList {
 
+    public void setShift(List<ShiftType> shift) {
+        this.shift = shift;
+    }
+
     @XmlElement(namespace = "http://www.oldCompany.com/attendance")
     protected List<ShiftType> shift;
 
