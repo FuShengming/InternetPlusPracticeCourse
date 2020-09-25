@@ -1,12 +1,19 @@
+//
+// 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.8-b130911.1802 生成的
+// 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// 在重新编译源模式时, 对此文件的所有修改都将丢失。
+// 生成时间: 2020.09.25 时间 10:16:06 AM CST 
+//
+
 
 package com.example.oldCompanySystem.Entity.BOMEntity;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -81,7 +88,7 @@ public class BOMType {
      * @return
      *     possible object is
      *     {@link BOMType.ProcessList }
-     *
+     *     
      */
     public BOMType.ProcessList getProcessList() {
         return processList;
@@ -89,11 +96,11 @@ public class BOMType {
 
     /**
      * 设置processList属性的值。
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BOMType.ProcessList }
-     *
+     *     
      */
     public void setProcessList(BOMType.ProcessList value) {
         this.processList = value;

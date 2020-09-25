@@ -2,6 +2,7 @@
 package com.example.oldCompanySystem.bl;
 
 import com.example.oldCompanySystem.Entity.BOMEntity.*;
+import org.springframework.stereotype.Service;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

@@ -1,3 +1,10 @@
+//
+// 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.8-b130911.1802 生成的
+// 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// 在重新编译源模式时, 对此文件的所有修改都将丢失。
+// 生成时间: 2020.09.25 时间 10:16:06 AM CST 
+//
+
 
 package com.example.oldCompanySystem.Entity.BOMEntity;
 
@@ -10,7 +17,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the BOMEntity package. 
+ * generated in the com.example.oldCompanySystem.Entity.BOMEntity package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -24,33 +31,23 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _OrderDoesNotExistFault_QNAME = new QName("http://www.oldCompany.com/fault", "OrderDoesNotExistFault");
-    private final static QName _GetAllOrdersParam_QNAME = new QName("http://www.oldCompany.com/order", "getAllOrdersParam");
-    private final static QName _ItemDoesNotExistFault_QNAME = new QName("http://www.oldCompany.com/fault", "ItemDoesNotExistFault");
     private final static QName _GetAllMachineInfosParam_QNAME = new QName("http://www.oldCompany.com/erp", "getAllMachineInfosParam");
-    private final static QName _PersonnelDoesNotExistFault_QNAME = new QName("http://www.oldCompany.com/fault", "PersonnelDoesNotExistFault");
     private final static QName _GetGroupInfoByIdParam_QNAME = new QName("http://www.oldCompany.com/erp", "getGroupInfoByIdParam");
-    private final static QName _GroupDoesNotExistFault_QNAME = new QName("http://www.oldCompany.com/fault", "GroupDoesNotExistFault");
-    private final static QName _OrderInfo_QNAME = new QName("http://www.oldCompany.com/order", "orderInfo");
     private final static QName _GetMachineInfosByTypeParam_QNAME = new QName("http://www.oldCompany.com/erp", "getMachineInfosByTypeParam");
     private final static QName _GetItemInfoByIdParam_QNAME = new QName("http://www.oldCompany.com/erp", "getItemInfoByIdParam");
     private final static QName _MachineInfo_QNAME = new QName("http://www.oldCompany.com/erp", "MachineInfo");
     private final static QName _GetAllItemInfosParam_QNAME = new QName("http://www.oldCompany.com/erp", "getAllItemInfosParam");
-    private final static QName _MachineDoesNotExistFault_QNAME = new QName("http://www.oldCompany.com/fault", "MachineDoesNotExistFault");
-    private final static QName _GetOrderByIdParam_QNAME = new QName("http://www.oldCompany.com/order", "getOrderByIdParam");
     private final static QName _ItemInfo_QNAME = new QName("http://www.oldCompany.com/erp", "ItemInfo");
     private final static QName _GroupInfo_QNAME = new QName("http://www.oldCompany.com/erp", "GroupInfo");
-    private final static QName _MaterielDoesNotExistFault_QNAME = new QName("http://www.oldCompany.com/fault", "MaterielDoesNotExistFault");
     private final static QName _GetGroupInfoByMemberNameParam_QNAME = new QName("http://www.oldCompany.com/erp", "getGroupInfoByMemberNameParam");
     private final static QName _GetMachineInfoByNameParam_QNAME = new QName("http://www.oldCompany.com/erp", "getMachineInfoByNameParam");
     private final static QName _GetAllBOMsParam_QNAME = new QName("http://www.oldCompany.com/bom", "getAllBOMsParam");
     private final static QName _GetAllGroupInfosParam_QNAME = new QName("http://www.oldCompany.com/erp", "getAllGroupInfosParam");
     private final static QName _BOMInfo_QNAME = new QName("http://www.oldCompany.com/bom", "BOMInfo");
-    private final static QName _GetOrdersByItemIdParam_QNAME = new QName("http://www.oldCompany.com/order", "getOrdersByItemIdParam");
     private final static QName _GetBOMByItemIdParam_QNAME = new QName("http://www.oldCompany.com/bom", "getBOMByItemIdParam");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: BOMEntity
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.example.oldCompanySystem.Entity.BOMEntity
      * 
      */
     public ObjectFactory() {
@@ -73,86 +70,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link MaterielDoesNotExistFaultType }
-     * 
-     */
-    public MaterielDoesNotExistFaultType createMaterielDoesNotExistFaultType() {
-        return new MaterielDoesNotExistFaultType();
-    }
-
-    /**
-     * Create an instance of {@link GroupDoesNotExistFaultType }
-     * 
-     */
-    public GroupDoesNotExistFaultType createGroupDoesNotExistFaultType() {
-        return new GroupDoesNotExistFaultType();
-    }
-
-    /**
-     * Create an instance of {@link MachineDoesNotExistFaultType }
-     * 
-     */
-    public MachineDoesNotExistFaultType createMachineDoesNotExistFaultType() {
-        return new MachineDoesNotExistFaultType();
-    }
-
-    /**
-     * Create an instance of {@link OrderDoesNotExistFaultType }
-     * 
-     */
-    public OrderDoesNotExistFaultType createOrderDoesNotExistFaultType() {
-        return new OrderDoesNotExistFaultType();
-    }
-
-    /**
-     * Create an instance of {@link ItemDoesNotExistFaultType }
-     * 
-     */
-    public ItemDoesNotExistFaultType createItemDoesNotExistFaultType() {
-        return new ItemDoesNotExistFaultType();
-    }
-
-    /**
-     * Create an instance of {@link PersonnelDoesNotExistFaultType }
-     * 
-     */
-    public PersonnelDoesNotExistFaultType createPersonnelDoesNotExistFaultType() {
-        return new PersonnelDoesNotExistFaultType();
-    }
-
-    /**
-     * Create an instance of {@link GetOrderByIdType }
-     * 
-     */
-    public GetOrderByIdType createGetOrderByIdType() {
-        return new GetOrderByIdType();
-    }
-
-    /**
-     * Create an instance of {@link OrderInfoType }
-     * 
-     */
-    public OrderInfoType createOrderInfoType() {
-        return new OrderInfoType();
-    }
-
-    /**
-     * Create an instance of {@link OrderList }
-     * 
-     */
-    public OrderList createOrderList() {
-        return new OrderList();
-    }
-
-    /**
-     * Create an instance of {@link GetOrdersByItemIdType }
-     * 
-     */
-    public GetOrdersByItemIdType createGetOrdersByItemIdType() {
-        return new GetOrdersByItemIdType();
-    }
-
-    /**
      * Create an instance of {@link BOMList }
      * 
      */
@@ -169,19 +86,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RequiredItemInfoType }
-     * 
-     */
-    public RequiredItemInfoType createRequiredItemInfoType() {
-        return new RequiredItemInfoType();
-    }
-
-    /**
      * Create an instance of {@link ResourceInfoType }
      * 
      */
     public ResourceInfoType createResourceInfoType() {
         return new ResourceInfoType();
+    }
+
+    /**
+     * Create an instance of {@link RequiredMaterialInfoType }
+     * 
+     */
+    public RequiredMaterialInfoType createRequiredMaterialInfoType() {
+        return new RequiredMaterialInfoType();
     }
 
     /**
@@ -273,11 +190,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ProcessType.RequiredItemInfoList }
+     * Create an instance of {@link ProcessType.RequiredMaterialInfoList }
      * 
      */
-    public ProcessType.RequiredItemInfoList createProcessTypeRequiredItemInfoList() {
-        return new ProcessType.RequiredItemInfoList();
+    public ProcessType.RequiredMaterialInfoList createProcessTypeRequiredMaterialInfoList() {
+        return new ProcessType.RequiredMaterialInfoList();
+    }
+
+    /**
+     * Create an instance of {@link ProcessType.AlternativeGroupInfoList }
+     * 
+     */
+    public ProcessType.AlternativeGroupInfoList createProcessTypeAlternativeGroupInfoList() {
+        return new ProcessType.AlternativeGroupInfoList();
+    }
+
+    /**
+     * Create an instance of {@link ProcessType.AlternativeMachineInfoList }
+     * 
+     */
+    public ProcessType.AlternativeMachineInfoList createProcessTypeAlternativeMachineInfoList() {
+        return new ProcessType.AlternativeMachineInfoList();
     }
 
     /**
@@ -286,33 +219,6 @@ public class ObjectFactory {
      */
     public BOMType.ProcessList createBOMTypeProcessList() {
         return new BOMType.ProcessList();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OrderDoesNotExistFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/fault", name = "OrderDoesNotExistFault")
-    public JAXBElement<OrderDoesNotExistFaultType> createOrderDoesNotExistFault(OrderDoesNotExistFaultType value) {
-        return new JAXBElement<OrderDoesNotExistFaultType>(_OrderDoesNotExistFault_QNAME, OrderDoesNotExistFaultType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/order", name = "getAllOrdersParam", defaultValue = "getAllOrders")
-    public JAXBElement<String> createGetAllOrdersParam(String value) {
-        return new JAXBElement<String>(_GetAllOrdersParam_QNAME, String.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ItemDoesNotExistFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/fault", name = "ItemDoesNotExistFault")
-    public JAXBElement<ItemDoesNotExistFaultType> createItemDoesNotExistFault(ItemDoesNotExistFaultType value) {
-        return new JAXBElement<ItemDoesNotExistFaultType>(_ItemDoesNotExistFault_QNAME, ItemDoesNotExistFaultType.class, null, value);
     }
 
     /**
@@ -325,39 +231,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PersonnelDoesNotExistFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/fault", name = "PersonnelDoesNotExistFault")
-    public JAXBElement<PersonnelDoesNotExistFaultType> createPersonnelDoesNotExistFault(PersonnelDoesNotExistFaultType value) {
-        return new JAXBElement<PersonnelDoesNotExistFaultType>(_PersonnelDoesNotExistFault_QNAME, PersonnelDoesNotExistFaultType.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetGroupInfoByIdParamType }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://www.oldCompany.com/erp", name = "getGroupInfoByIdParam")
     public JAXBElement<GetGroupInfoByIdParamType> createGetGroupInfoByIdParam(GetGroupInfoByIdParamType value) {
         return new JAXBElement<GetGroupInfoByIdParamType>(_GetGroupInfoByIdParam_QNAME, GetGroupInfoByIdParamType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GroupDoesNotExistFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/fault", name = "GroupDoesNotExistFault")
-    public JAXBElement<GroupDoesNotExistFaultType> createGroupDoesNotExistFault(GroupDoesNotExistFaultType value) {
-        return new JAXBElement<GroupDoesNotExistFaultType>(_GroupDoesNotExistFault_QNAME, GroupDoesNotExistFaultType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OrderInfoType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/order", name = "orderInfo")
-    public JAXBElement<OrderInfoType> createOrderInfo(OrderInfoType value) {
-        return new JAXBElement<OrderInfoType>(_OrderInfo_QNAME, OrderInfoType.class, null, value);
     }
 
     /**
@@ -397,24 +276,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MachineDoesNotExistFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/fault", name = "MachineDoesNotExistFault")
-    public JAXBElement<MachineDoesNotExistFaultType> createMachineDoesNotExistFault(MachineDoesNotExistFaultType value) {
-        return new JAXBElement<MachineDoesNotExistFaultType>(_MachineDoesNotExistFault_QNAME, MachineDoesNotExistFaultType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetOrderByIdType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/order", name = "getOrderByIdParam")
-    public JAXBElement<GetOrderByIdType> createGetOrderByIdParam(GetOrderByIdType value) {
-        return new JAXBElement<GetOrderByIdType>(_GetOrderByIdParam_QNAME, GetOrderByIdType.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ItemInfoType }{@code >}}
      * 
      */
@@ -430,15 +291,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.oldCompany.com/erp", name = "GroupInfo")
     public JAXBElement<GroupInformationType> createGroupInfo(GroupInformationType value) {
         return new JAXBElement<GroupInformationType>(_GroupInfo_QNAME, GroupInformationType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MaterielDoesNotExistFaultType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/fault", name = "MaterielDoesNotExistFault")
-    public JAXBElement<MaterielDoesNotExistFaultType> createMaterielDoesNotExistFault(MaterielDoesNotExistFaultType value) {
-        return new JAXBElement<MaterielDoesNotExistFaultType>(_MaterielDoesNotExistFault_QNAME, MaterielDoesNotExistFaultType.class, null, value);
     }
 
     /**
@@ -484,15 +336,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://www.oldCompany.com/bom", name = "BOMInfo")
     public JAXBElement<BOMType> createBOMInfo(BOMType value) {
         return new JAXBElement<BOMType>(_BOMInfo_QNAME, BOMType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetOrdersByItemIdType }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://www.oldCompany.com/order", name = "getOrdersByItemIdParam")
-    public JAXBElement<GetOrdersByItemIdType> createGetOrdersByItemIdParam(GetOrdersByItemIdType value) {
-        return new JAXBElement<GetOrdersByItemIdType>(_GetOrdersByItemIdParam_QNAME, GetOrdersByItemIdType.class, null, value);
     }
 
     /**

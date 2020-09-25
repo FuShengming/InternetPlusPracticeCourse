@@ -1,7 +1,18 @@
+//
+// 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.8-b130911.1802 生成的
+// 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+// 在重新编译源模式时, 对此文件的所有修改都将丢失。
+// 生成时间: 2020.09.25 时间 10:16:06 AM CST 
+//
+
 
 package com.example.oldCompanySystem.Entity.BOMEntity;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -18,6 +29,9 @@ import javax.xml.bind.annotation.*;
  *         &lt;element name="resourceMode" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="resourceType" type="{http://www.oldCompany.com/bom}ResourceType"/>
  *         &lt;element name="leastNumOfResource" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="standardCapacity" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="priority" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="timeOfChangeLine" type="{http://www.w3.org/2001/XMLSchema}double"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,7 +45,10 @@ import javax.xml.bind.annotation.*;
     "resourceName",
     "resourceMode",
     "resourceType",
-    "leastNumOfResource"
+    "leastNumOfResource",
+    "standardCapacity",
+    "priority",
+    "timeOfChangeLine"
 })
 public class ResourceInfoType {
 
@@ -43,6 +60,9 @@ public class ResourceInfoType {
     @XmlSchemaType(name = "string")
     protected ResourceType resourceType;
     protected int leastNumOfResource;
+    protected int standardCapacity;
+    protected int priority;
+    protected double timeOfChangeLine;
 
     /**
      * 获取resourceName属性的值。
@@ -130,6 +150,54 @@ public class ResourceInfoType {
      */
     public void setLeastNumOfResource(int value) {
         this.leastNumOfResource = value;
+    }
+
+    /**
+     * 获取standardCapacity属性的值。
+     * 
+     */
+    public int getStandardCapacity() {
+        return standardCapacity;
+    }
+
+    /**
+     * 设置standardCapacity属性的值。
+     * 
+     */
+    public void setStandardCapacity(int value) {
+        this.standardCapacity = value;
+    }
+
+    /**
+     * 获取priority属性的值。
+     * 
+     */
+    public int getPriority() {
+        return priority;
+    }
+
+    /**
+     * 设置priority属性的值。
+     * 
+     */
+    public void setPriority(int value) {
+        this.priority = value;
+    }
+
+    /**
+     * 获取timeOfChangeLine属性的值。
+     * 
+     */
+    public double getTimeOfChangeLine() {
+        return timeOfChangeLine;
+    }
+
+    /**
+     * 设置timeOfChangeLine属性的值。
+     * 
+     */
+    public void setTimeOfChangeLine(double value) {
+        this.timeOfChangeLine = value;
     }
 
 }
