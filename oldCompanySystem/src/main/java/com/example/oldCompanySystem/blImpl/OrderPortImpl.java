@@ -86,9 +86,9 @@ public class OrderPortImpl implements OrderPort {
                 break;
             }
         }
-        if(!existed){
-            throw new ItemDoesNotExistFault("This item does not exist.",new ItemDoesNotExistFaultType());
-        }
+//        if(!existed){
+//            throw new ItemDoesNotExistFault("This item does not exist.",new ItemDoesNotExistFaultType());
+//        }
 
         OrderList res = new OrderList();
         List<OrderInfoType> orderInfoTypes = new ArrayList<OrderInfoType>();

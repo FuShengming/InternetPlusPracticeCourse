@@ -1,4 +1,4 @@
-package com.example.oldCompanySystem;
+package com.example.oldCompanySystem.blImpl;
 
 import com.example.oldCompanySystem.Entity.PersonnelEntity.*;
 

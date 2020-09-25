@@ -1,18 +1,14 @@
 package com.example.oldCompanySystem.Config;
 
 
-import com.example.oldCompanySystem.bl.AttendancePort;
-import com.example.oldCompanySystem.bl.ErpPort;
-import com.example.oldCompanySystem.bl.OrderPort;
-import com.example.oldCompanySystem.bl.PersonnelPort;
-import com.example.oldCompanySystem.blImpl.AttendancePortImpl;
-import com.example.oldCompanySystem.blImpl.ErpPortImpl;
-import com.example.oldCompanySystem.blImpl.OrderPortImpl;
-import com.example.oldCompanySystem.blImpl.PersonnelPortImpl;
+import com.example.oldCompanySystem.bl.*;
+import com.example.oldCompanySystem.blImpl.*;
 import org.apache.cxf.Bus;
 import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.jaxws.EndpointImpl;
+import org.apache.cxf.transport.servlet.CXFServlet;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,6 +18,12 @@ import javax.xml.ws.Endpoint;
 @Configuration
 @EnableAutoConfiguration
 public class CxfConfig {
+
+    @Bean
+    public ServletRegistrationBean createServletRegistrationBean() {
+
+        return new ServletRegistrationBean(new CXFServlet(), "/ws/*");
+    }
 
     @Bean(name = Bus.DEFAULT_BUS_ID)
     public SpringBus springBus() {
@@ -38,6 +40,10 @@ public class CxfConfig {
     }
     @Bean
     ErpPort erpPort(){return new ErpPortImpl();}
+
+    @Bean
+    BOMPort bomPort(){return new BOMPortImpl();
+    }
 
     @Bean(name = "orderPortEndpoint")
     public Endpoint endpoint1() {
@@ -64,6 +70,13 @@ public class CxfConfig {
     public Endpoint endpoint4() {
         org.apache.cxf.jaxws.EndpointImpl endpoint = new EndpointImpl(springBus(), erpPort());
         endpoint.publish("/erp");
+        return endpoint;
+    }
+
+    @Bean(name = "bomPortEndpoint")
+    public Endpoint endpoint5() {
+        org.apache.cxf.jaxws.EndpointImpl endpoint = new EndpointImpl(springBus(), bomPort());
+        endpoint.publish("/bom");
         return endpoint;
     }
 }
